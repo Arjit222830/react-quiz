@@ -73,7 +73,7 @@ export const deleteQuestion= (id)=> async (dispatch)=> {
 export const updateQuestion= (id, formValues)=> async (dispatch)=> {
     console.log("Edit="+formValues)
     const response=  await axios.put(`/quiz/${id}`, formValues);
-    dispatch({ type: UPDATE_QUESTION, payload: response})
+    dispatch({ type: UPDATE_QUESTION, payload: response.data})
     window.location.replace('/');
     alert('A question has been updated');
 };
