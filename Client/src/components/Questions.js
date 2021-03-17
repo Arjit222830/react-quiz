@@ -84,7 +84,7 @@ class Questions extends React.Component {
                 <div className="ui celled list">
                     <hr />
                     <div className="text-right">
-                        <Timer startCount={localStorage.getItem('x-time-token')?localStorage.getItem('x-time-token'):1500}/>
+                        <Timer startCount={localStorage.getItem('x-time-token')?localStorage.getItem('x-time-token'):1800}/>
                     </div>
                     <Alert />
                     <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">

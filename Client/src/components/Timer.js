@@ -7,7 +7,7 @@ class Timer extends React.Component {
     constructor(props){
         super(props);
         this.state= {
-            count: 1500
+            count: 1800
         }
     }
 

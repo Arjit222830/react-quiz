@@ -27,7 +27,7 @@ class App extends React.Component{
     componentDidMount(){
         this.props.fetchQuestionsAdmin();
         if(!localStorage.getItem('x-time-token'))
-            localStorage.setItem('x-time-token',1500);
+            localStorage.setItem('x-time-token',1800);
     }
 
     render(){
@@ -63,8 +63,5 @@ const mapStateToProps = (state) => {
       isFullScreen: state.fullScreen.isFullScreen
     };
 };
-
-
-
 
 export default connect(mapStateToProps,{fetchQuestionsAdmin,selectId,setFullScreen})(App);

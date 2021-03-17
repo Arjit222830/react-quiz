@@ -1,7 +1,3 @@
-$(document).on('click','.accept', function(e){
-    $(".modal-fade").modal("hide");
-});
-
 /*
 $(document).on("keydown", function (e) {
     e.preventDefault();
