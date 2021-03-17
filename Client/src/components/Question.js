@@ -9,10 +9,6 @@ class Question extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchQuestions();
-  }
-
   renderInput = (props) => {
     return (
       <div className="field">
@@ -63,6 +59,7 @@ class Question extends React.Component {
           </Stack>
           </RadioGroup> */}
               <Field
+                id={name}
                 name={name}
                 component={this.renderInput}
                 type="radio"
@@ -71,6 +68,7 @@ class Question extends React.Component {
                 option={this.props.question.o1}
               />
               <Field
+                id={name}
                 name={name}
                 component={this.renderInput}
                 type="radio"
@@ -79,6 +77,7 @@ class Question extends React.Component {
                 option={this.props.question.o2}
               />
               <Field
+                id={name}
                 name={name}
                 component={this.renderInput}
                 type="radio"

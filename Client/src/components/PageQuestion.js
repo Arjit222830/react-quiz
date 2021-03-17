@@ -1,22 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ModalQuestion from './Modal';
-import { fetchQuestions, deleteQuestion } from '../actions';
+import { fetchQuestionsAdmin, deleteQuestion } from '../actions';
 import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 
 class PageQuestion extends React.Component {
 
-    componentDidMount() {
-        this.props.fetchQuestions();
-        console.log(this.props.params);
-    }
-
     renderList(){
         var x=1;
-        return this.props.questions.map( (ques) =>{
+        return this.props.questions.map( (ques,index) =>{
             return (
-                <>
+                <React.Fragment key={index}>
                     <div className="row">
                         <div className="col-4">
                           {x++}.{ques.q1}
@@ -31,7 +26,7 @@ class PageQuestion extends React.Component {
                         </div>
                     </div>
                     <hr/>
-                </>
+                </React.Fragment>
             )
         });
     }
@@ -53,11 +48,10 @@ class PageQuestion extends React.Component {
 }
 
 const mapStateToProps= (state, ownProps)=> {
-    console.log(state.questions[ownProps.match.params.id]);
+    console.log(state);
     return {
-        questions: Object.values(state.questions),
-        question: state.questions[ownProps.match.params.id]
+        questions: Object.values(state.questions)
     }  
 }
 
-export default connect(mapStateToProps, { fetchQuestions, deleteQuestion })(PageQuestion);
+export default connect(mapStateToProps, { fetchQuestionsAdmin, deleteQuestion })(PageQuestion);

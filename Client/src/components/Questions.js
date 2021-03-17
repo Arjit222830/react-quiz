@@ -21,10 +21,6 @@ class Questions extends React.Component {
         this.state= {flag:0,count:0,check:true,screenWidth:window.innerWidth};
     }
 
-    componentDidMount(){
-        this.props.fetchQuestions();
-    }
-
     onSubmit= async (formValues) => {
         let c=0;
         await Object.values(this.props.questions).map((question)=> {
@@ -81,15 +77,13 @@ class Questions extends React.Component {
         window.addEventListener("resize", ()=>this.setState({screenWidth:window.innerWidth}));
         
         var x=1;
-
-        console.log();
         
         return (
             <div>
                 <h1 className="Quiz-title text-center">CESTA <br /> WARM-UP <br /> QUIZ</h1>
                 <div className="ui celled list">
                     <div className="text-right">
-                        <Timer startCount={localStorage.getItem('x-time-token')?localStorage.getItem('x-time-token'):1500}/>
+                        <Timer startCount={localStorage.getItem('x-time-token')?localStorage.getItem('x-time-token'):1800}/>
                     </div>
                     <Alert />
                     <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
@@ -99,9 +93,9 @@ class Questions extends React.Component {
                                 <Grid item sm={3} xs={3} style={{height: '35vh',overflowY: 'scroll' }}>
                                     <Grid container spacing={2}> 
                                     {
-                                        Object.values(this.props.questions).map((item)=>{
+                                        Object.values(this.props.questions).map((item,index)=>{
                                             return (
-                                                <Grid item>
+                                                <Grid item key={index} >
                                                     <Card sno={x++} question={item}/>
                                                 </Grid>
                                             )
