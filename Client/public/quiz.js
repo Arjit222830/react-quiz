@@ -1,8 +1,6 @@
-/*
 $(document).on("keydown", function (e) {
     e.preventDefault();
 });
-*/
 
 document.oncontextmenu=RightMouseDown;
 document.onmousedown = mouseDown; 
