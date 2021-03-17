@@ -7,7 +7,6 @@ import timeReducer from './timeReducer';
 import idReducer from './idReducer';
 import fullScreenReducer from './fullScreenReducer';
 
-
 export default combineReducers({
     auth: authReducer,
     form: formReducer,
@@ -15,5 +14,5 @@ export default combineReducers({
     users: userReducer,
     time: timeReducer,
     selectedId: idReducer,
-    fullScreen: fullScreenReducer
+    fullScreen: fullScreenReducer,
 });
