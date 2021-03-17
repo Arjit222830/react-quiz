@@ -3,23 +3,25 @@
 
 .main {
   background-size: cover;
-  background-image: url("./assests/Radiant-Gradient.svg") !important;
+background: linear-gradient(to right, #2193b0, #6dd5ed);
+  /* background-image: url("./assests/Radiant-Gradient.svg") !important; */
 }
 
 .Quiz-title {
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #3449eb;
+  color: #5500a5;
   font-family: "Monoton";
   font-style: normal;
   font-weight: 500;
-  font-size: 2.9rem;
+  font-size: 3rem;
 }
 
 .timer {
-  font-size: 1.6rem;
-  color: green;
-  font-family: 'Crimson Text', serif;
+  font-size: 2rem;
+  color: #D01919;
+  font-weight: 600;
+  padding: 10px;
 }
 
 .Login {
@@ -27,24 +29,23 @@
 }
 
 .userName {
-  color: green;
+  color: #ffffff;
   padding-top: 15px;
   padding-bottom: 10px;
   font-size: 1.5rem;
-  font-family: 'Crimson Text', serif;
+  font-weight: 600;
 }
 
 .content {
   font-size: 1.5rem;
 }
 
-.main-question {
-  font-family: 'Crimson Text', serif;
+/* .main-question {
+  color: #303030;
   font-size: 1.6rem;
-}
+} */
 
 .option {
-  font-family:  'Quicksand';
   font-size: 1.5rem;
 }
 

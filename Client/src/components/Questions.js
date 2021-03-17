@@ -4,7 +4,7 @@ import { reduxForm } from 'redux-form';
 import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
 import Grid from '@material-ui/core/Grid';
-
+import { Button } from "@chakra-ui/react"
 import { selectId } from "../actions";
 import { fetchQuestions } from '../actions';
 import { usersDetail } from '../actions';
@@ -82,14 +82,12 @@ class Questions extends React.Component {
             <div>
                 <h1 className="Quiz-title text-center">CESTA <br /> WARM-UP <br /> QUIZ</h1>
                 <div className="ui celled list">
-                    <hr />
                     <div className="text-right">
                         <Timer startCount={localStorage.getItem('x-time-token')?localStorage.getItem('x-time-token'):1800}/>
                     </div>
                     <Alert />
                     <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
                         <h4 className="userName">USER :-   {this.username()}</h4>
-                        <hr size="10"/>
                         { this.props.isSignedIn && (
                             <Grid container spacing={3}>
                                 <Grid item sm={3} xs={3} style={{height: '35vh',overflowY: 'scroll' }}>
@@ -108,13 +106,19 @@ class Questions extends React.Component {
                                 <Grid item sm={9} xs={9} >
                                     <Grid container spacing={1}>
                                         <Grid item xs={1} style={{marginTop:'15vh'}}>
-                                            <ArrowBackIosRoundedIcon fontSize="large" color={this.props.selectedId.sno==1?'disabled':''} onClick={()=>this.props.selectedId.sno==1?null:this.onClick(this.props.selectedId.sno-1)}/>
+                                        <Button leftIcon={<ArrowBackIosRoundedIcon fontSize="large" color={this.props.selectedId.sno==1?'disabled':''}/>} 
+                                        colorScheme="teal" variant="solid" onClick={()=>this.props.selectedId.sno==1?null:this.onClick(this.props.selectedId.sno-1)}>
+                                          prev
+                                        </Button>
                                         </Grid>
                                         <Grid item xs={10} >
                                             <Question sno={this.props.selectedId.sno} question={this.props.questions[this.props.selectedId.id]}/>
                                         </Grid>
                                         <Grid item xs={1} style={{marginTop:'15vh'}}>
-                                            <ArrowForwardIosRoundedIcon fontSize="large" color={this.props.selectedId.sno==Object.values(this.props.questions).length?'disabled':''} onClick={()=>this.props.selectedId.sno==Object.values(this.props.questions).length?null:this.onClick(this.props.selectedId.sno+1)}/>
+                                        <Button rightIcon={<ArrowForwardIosRoundedIcon fontSize="large" color={this.props.selectedId.sno==Object.values(this.props.questions).length?'disabled':''} />} 
+                                        colorScheme="teal" variant="solid" onClick={()=>this.props.selectedId.sno==Object.values(this.props.questions).length?null:this.onClick(this.props.selectedId.sno+1)}>
+                                          Next
+                                        </Button>
                                         </Grid>
                                     </Grid> 
                                 </Grid>
