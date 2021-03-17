@@ -1,7 +1,6 @@
 import React from 'react';
 import { Router, Route, Switch} from 'react-router-dom';
 import { connect } from "react-redux";
-import { reduxForm } from 'redux-form';
 import Header from './Header';
 import Questions from './Questions';
 import AddQuestion from './AddQuestion';
@@ -12,7 +11,7 @@ import history from '../history';
 import {selectId} from '../actions';
 import {setFullScreen} from '../actions';
 import {fetchQuestions} from '../actions';
-import  Modal from './Modal';
+
 
 import 'semantic-ui-css/semantic.min.css'
 

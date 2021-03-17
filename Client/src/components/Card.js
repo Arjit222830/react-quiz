@@ -22,8 +22,8 @@ class Card extends React.Component {
   render(){
 
     return (
-        <div onClick={this.onClick} style={{width: '40px',height: '30px', backgroundColor: this.props.question._id==this.props.selectedId.id?'green':'white',border: '1px solid gray',borderRadius:'7px'}}>
-            <h6 style={{cursor:'pointer',paddingTop:'5px',paddingLeft:'10px',color: this.props.question._id==this.props.selectedId.id?'white':'black'}}>
+        <div onClick={this.onClick} style={{width: '40px',height: '30px', backgroundColor: this.props.question._id==this.props.selectedId.id?'#7b27c4':'white',border: '0.5px solid gray',borderRadius:'7px'}}>
+            <h6 style={{fontWeight:'600' ,cursor:'pointer',paddingTop:'5px',paddingLeft:'14px',color: this.props.question._id==this.props.selectedId.id?'white':'black'}}>
                 {this.props.sno}
             </h6>
         </div>
