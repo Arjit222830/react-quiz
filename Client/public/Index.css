@@ -36,14 +36,9 @@ background: linear-gradient(to right, #2193b0, #6dd5ed);
   font-weight: 600;
 }
 
-.content {
-  font-size: 1.5rem;
-}
-
-/* .main-question {
-  color: #303030;
+.main-question {
   font-size: 1.6rem;
-} */
+} 
 
 .option {
   font-size: 1.5rem;
