@@ -10,7 +10,7 @@ import Results from './Results';
 import history from '../history';
 import {selectId} from '../actions';
 import {setFullScreen} from '../actions';
-import {fetchQuestions} from '../actions';
+import {fetchQuestionsAdmin} from '../actions';
 import  Modal from './Modal';
 
 import 'semantic-ui-css/semantic.min.css'
@@ -24,7 +24,7 @@ class App extends React.Component{
     }
 
     componentDidMount(){
-        this.props.fetchQuestions();
+        this.props.fetchQuestionsAdmin();
         if(!localStorage.getItem('x-time-token'))
             localStorage.setItem('x-time-token',1800);
     }
@@ -63,4 +63,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps,{fetchQuestions,selectId,setFullScreen})(App);
+export default connect(mapStateToProps,{fetchQuestionsAdmin,selectId,setFullScreen})(App);
