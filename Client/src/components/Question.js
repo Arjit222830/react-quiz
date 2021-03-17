@@ -34,10 +34,10 @@ class Question extends React.Component {
         {/* <i className="large middle aligned icon question" /> */}
         <div className="content">
           <div id="question">
-            <Heading color="#303030">Q{this.props.sno}.  {this.props.question.q1}</Heading>
-            {/* <h4 className="main-question" >
+            {/* <Heading color="#303030">Q{this.props.sno}.  {this.props.question.q1}</Heading> */}
+            <h4 className="main-question" >
               <pre style={{whiteSpace: "pre-wrap"}}>Q{this.props.sno}.  {this.props.question.q1}</pre>
-            </h4> */}
+            </h4>
             <br />
           </div>
           <div>
