@@ -1,3 +1,4 @@
+/*
 $(document).on("keydown", function (e) {
     e.preventDefault();
 });
@@ -11,3 +12,4 @@ function mouseDown(e) {
     }
 }
 function RightMouseDown() { return false;}
+*/
